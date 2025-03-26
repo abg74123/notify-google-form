@@ -1,5 +1,5 @@
 <template>
-  TEST
+    <router-view></router-view>
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default {
         const profile = await liff.getProfile()
         console.log("profile => ", profile)
         const route = useRoute()
-        console.log("query => ",route)
+        console.log("route => ",route.query.form)
         if (route.query && route.query.form === "success") {
           try {
             await liff.sendMessages([
