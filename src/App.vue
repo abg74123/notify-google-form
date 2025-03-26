@@ -18,7 +18,7 @@ export default {
         const profile = await liff.getProfile()
         console.log("profile => ", profile)
         const route = useRoute()
-        console.log("query => ",route.query)
+        console.log("query => ",route)
         if (route.query && route.query.form === "success") {
           try {
             await liff.sendMessages([
