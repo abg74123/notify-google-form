@@ -1,26 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+TEST
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import liff from "@line/liff";
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+  },
+    async mounted() {
+    console.log("mount")
+    try {
+      // * Config Line Liff
+      await liff.init({ liffId: "2006835556-jyGm1w0z", withLoginOnExternalBrowser: true })
+      // ^ Check Line Liff Login ?
+      if (liff.isLoggedIn()) {
+        const profile = await liff.getProfile()
+        console.log("profile => ", profile)
+        this.loading = false
+      } else {
+        liff.login()
+      }
+    } catch (e) {
+      console.log("error login => ", e)
+    }
+  },
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
