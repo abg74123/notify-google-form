@@ -4,7 +4,7 @@
 
 <script>
 import liff from "@line/liff";
-
+import { useRoute } from 'vue-router'
 export default {
   name: 'App',
   components: {},
@@ -17,7 +17,8 @@ export default {
       if (liff.isLoggedIn()) {
         const profile = await liff.getProfile()
         console.log("profile => ", profile)
-        if (this.$route.query.form === "success") {
+        const route = useRoute()
+        if (route.query.form === "success") {
           try {
             await liff.sendMessages([
               {
