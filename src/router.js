@@ -1,9 +1,7 @@
 // router.js (or router/index.js)
 import { createRouter, createWebHistory } from 'vue-router';
-import HelloWorld from "@/components/HelloWorld.vue";
 
 const routes = [
-  { path: '/', component: HelloWorld },
 ];
 
 const router = createRouter({

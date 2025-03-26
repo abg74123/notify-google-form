@@ -1,10 +1,10 @@
 <template>
-    <router-view></router-view>
+  Test
 </template>
 
 <script>
 import liff from "@line/liff";
-import { useRoute } from 'vue-router'
+
 export default {
   name: 'App',
   components: {},
@@ -17,8 +17,8 @@ export default {
       if (liff.isLoggedIn()) {
         const profile = await liff.getProfile()
         console.log("profile => ", profile)
-        const route = useRoute()
-        if (route.query && route.query.form === "success") {
+          console.log("this.$route => ", this.$route)
+        if (this.$route && this.$route.query && this.$route.query.form === "success") {
           try {
             await liff.sendMessages([
               {
