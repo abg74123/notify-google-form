@@ -23,7 +23,7 @@ export default {
             await liff.sendMessages([
               {
                 type: "text",
-                text: "Hello"
+                text: "ได้มีการส่งเอกสารเบิกสินค้า"
               }
             ])
             console.log("success sendMessages")
