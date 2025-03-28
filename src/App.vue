@@ -1,5 +1,5 @@
 <template>
-  Test
+  <h3>กำลังโหลด...</h3>
 </template>
 
 <script>
@@ -32,7 +32,7 @@ export default {
             console.log("error sendMessages => ", e)
           }
         }else{
-           window.location = "https://docs.google.com/forms/d/e/1FAIpQLSeiZIf1x9WC7ZM_AGAsMz4T_vFXTACtdt2lWlGrYv7IcSItzA/viewform?usp=header"
+           window.location = "https://docs.google.com/forms/d/e/1FAIpQLSe1EI-gQ012sEN4tZRwgozWboiizLBp1Hff-pFF4IsB6UspZg/viewform?usp=sf_link"
         }
       } else {
         liff.login()
@@ -44,3 +44,18 @@ export default {
 }
 </script>
 
+<style>
+body{
+  margin: 0;
+}
+
+h3 {
+    left: 0;
+    line-height: 200px;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+</style>
